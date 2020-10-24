@@ -1,0 +1,31 @@
+.header-categories {
+    border: 0;
+    border-radius: 3px;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 14px;
+    background-color: rgba(156, 39, 176, 0) !important;
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(39, 62, 176, 0.46);
+}
+.header-categories-list {
+    text-align: left;
+}
+.header-categories li {
+    float: left;
+}
+.header-categories li a {
+    display: block;
+    text-align: center;
+    padding: 3px 15px;
+    text-decoration: none;
+}
+.header-categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.btnMobile.active {
+    color: white !important;
+    zoom: 1.4;
+}

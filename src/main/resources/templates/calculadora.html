@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Calculadora" />
+    <meta name="author" content="Santiago M" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" />
+    <title>Calcula el area para un triangulo, perimetro y triangulo</title>
+  </head>
+
+  <body>
+    <div class="row w-100 h-100">
+      <div class="container mb-4 w-100 h-100">
+        <div class="row m-4">
+          <div class="col-12 text-center">
+            <h2 class="text-dark text-uppercase">Cálculadora</h2>
+          </div>
+          <div class="col-md-4 col-12">
+            <div class="login-card-light p-3 shadow-lg rounded">
+              <div class="pt-3">
+                <h4 class="text-info text-center">Triángulo</h4>
+              </div>
+              <div class="col-12 text-center">
+                <img th:src="@{/imgs/imgtriangulo.jpg}" class="w-50" />
+              </div>
+              <div class="mt-5">
+                <div class="row">
+                  <div class="col-12">
+                    <label class="form-check-label text-dark">Area</label>
+                  </div>
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Base"
+                      id="areaTriangulo"
+                    />
+                  </div>
+
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Altura"
+                      id="triAltura"
+                    />
+                  </div>
+                  <div class="form-group col-12">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Resultado"
+                      id="resulArea"
+                      readonly
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <button class="btn btn-sm btn-info col areaTria">Calcular area</button>
+                  </div>
+                </div>
+            </div>
+              <div class="mt-5">
+                <div class="row">
+                  <div class="col-12">
+                    <label class="form-check-label text-dark">Perimetro</label>
+                  </div>
+                  <div class="form-group col-4">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Lado A"
+                      id="LadoA"
+                    />
+                  </div>
+
+                  <div class="form-group col-4">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Lado B"
+                      id="LadoB"
+                    />
+                  </div>
+                  <div class="form-group col-4">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Lado C"
+                      id="LadoC"
+                    />
+                  </div>
+                  <div class="form-group col-12">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Resultado"
+                      id="periResul"
+                      readonly
+                    />
+                  </div>
+
+                  <div class="col-12">
+                    <button class="btn btn-sm btn-info col  periTria">Calcular peri.</button>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="login-card-light p-3 shadow-lg rounded">
+              <div class="pt-3">
+                <h2 class="text-danger text-center">Círculo</h2>
+              </div>
+              <div class="col-12 text-center">
+                <img th:src="@{/imgs/imgcirculo.png}" class="w-25" />
+              </div>
+              <div class="mt-5">
+                <div class="row">
+                  <div class="col-12"></div>
+                  <div class="form-group col-12">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Radio m" 
+                      id="radioC"
+                    />
+                  </div>
+                  <div class="col-6">
+                    <input
+                    type="number"
+                    class="form-control form-control-sm"
+                    placeholder="Area"
+                    id="showArea"
+                    readonly
+                  />
+                  </div>
+                  <div class="col-6">
+                    <input
+                    type="number"
+                    class="form-control form-control-sm"
+                    placeholder="Perimetro"
+                    id="showPerimetro"
+                    readonly
+                  />
+                  </div>
+                  <div class="col-6 mt-2">
+                    <button class="btn btn-sm btn-danger col areaCirc">
+                      Calcular area
+                    </button>
+                  </div>
+                  <div class="col-6 mt-2">
+                    <button class="btn btn-sm btn-danger text-sm col periCirc">
+                      Calcular peri.
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="login-card-light p-3 shadow-lg rounded">
+              <div class="pt-3">
+                <h2 class="text-warning text-center">Rectángulo</h2>
+              </div>
+              <div class="col-12 text-center">
+                <img th:src="@{/imgs/imgrect.jpg}" class="w-50" />
+              </div>
+              <div class="mt-5">
+                <div class="row">
+                  <div class="col-12">
+                    <label class="form-check-label text-dark">Area</label>
+                  </div>
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Base"
+                      id="baseRec"
+                    />
+                  </div>
+
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Altura"
+                      id="altRec"
+                    />
+                  </div>
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Area m²"
+                      id="showAreaRect"
+                      readonly
+                    />
+                  </div>
+                  <div class="form-group col-6">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm"
+                      placeholder="Perimetro m"
+                      id="showPeriRect"
+                      readonly
+                    />
+                  </div>
+
+                  <div class="col-6">
+                    <button class="btn btn-sm btn-warning col areaRect">Calcular Area</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-sm btn-warning col periRect">Calcular peri.</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/calculadora.js}"></script>
+</html>
