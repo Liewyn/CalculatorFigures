@@ -52,7 +52,7 @@ const trianguloArea = (a, b) => {
 };
 
 const trianguloPerimetro = (a, b, c) => {
-  return parseInt(a) + parseInt(b) + parseInt(c);
+  return parseFloat(a) + parseFloat(b) + parseFloat(c);
 };
 
 const circuloArea = (r) => {
