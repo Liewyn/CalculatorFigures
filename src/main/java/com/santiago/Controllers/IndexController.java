@@ -24,8 +24,8 @@ public class IndexController {
 
     @PostMapping("/areaTriangulo")
     @ResponseBody
-    public Float areaTriangulo(@RequestBody Triangulo tri) {
-        return (tri.getAltura() * tri.getBase()) / 2 ;
+    public Float areaTriangulo(@RequestParam("base") Float base, @RequestParam("altura") Float altura) {
+        return (base * altura) / 2 ;
     }
 
     @PostMapping("/periTriangulo")

@@ -1,19 +1,22 @@
 $(document).ready(function () {
   $(document).on("click", ".areaTria", function () {
-
-    fetch("areaTriangulo", {
-      method: "POST", // or 'PUT'
-      body: JSON.stringify({
+    
+    $.ajax({
+      type: "POST",
+      url: "/areaTriangulo",
+      data: {
         base: $("#areaTriangulo").val(),
         altura: $("#triAltura").val(),
-      }), // data can be `string` or {object}!
-      headers: {
-        "Content-Type": "application/json",
       },
-    })
-      .then((res) => res.json())
-      .catch((error) => console.error("Error:", error))
-      .then((response) => $("#resulAreaaa").val(response));
+      beforeSend: function (r) {},
+      success: function (result) {
+        $("#resulAreaaa").val(result)
+      },
+      error(r) {
+        alert("Error");
+      },
+    });
+
   });
 
   $(document).on("click", ".periTria", function () {
