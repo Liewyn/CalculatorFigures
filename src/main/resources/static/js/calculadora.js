@@ -1,64 +1,101 @@
 $(document).ready(function () {
-  //area triangulo
   $(document).on("click", ".areaTria", function () {
-    var resul = trianguloArea($("#areaTriangulo").val(), $("#triAltura").val());
-    $("#resulArea").val(resul);
+
+    fetch("areaTriangulo", {
+      method: "POST", // or 'PUT'
+      body: JSON.stringify({
+        base: $("#areaTriangulo").val(),
+        altura: $("#triAltura").val(),
+      }), // data can be `string` or {object}!
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .catch((error) => console.error("Error:", error))
+      .then((response) => $("#resulAreaaa").val(response));
   });
 
-  //peri triangulo
   $(document).on("click", ".periTria", function () {
-    var resul = trianguloPerimetro(
-      $("#LadoA").val(),
-      $("#LadoB").val(),
-      $("#LadoC").val()
-    );
-    $("#periResul").val(resul);
+    $.ajax({
+      type: "POST",
+      url: "/periTriangulo",
+      data: {
+        ladoa: $("#LadoA").val(),
+        ladob: $("#LadoB").val(),
+        ladoc: $("#LadoC").val(),
+      },
+      beforeSend: function (r) {},
+      success: function (result) {
+        $("#periResul").val(result);
+      },
+      error(r) {
+        alert("Error");
+      },
+    });
   });
 
-  //peri circulo
   $(document).on("click", ".periCirc", function () {
-    var resul = perimetroCir($("#radioC").val());
-    $("#showPerimetro").val(resul);
+    $.ajax({
+      type: "POST",
+      url: "/periCirculo",
+      data: { radio: $("#radioC").val() },
+      beforeSend: function (r) {},
+      success: function (result) {
+        $("#showPerimetro").val(result);
+      },
+      error(r) {
+        alert("Error");
+      },
+    });
   });
 
-  //area circulo
   $(document).on("click", ".areaCirc", function () {
-    var resul = circuloArea($("#radioC").val());
-    $("#showArea").val(resul);
+    $.ajax({
+      type: "POST",
+      url: "/areaCirculo",
+      data: { radio: $("#radioC").val() },
+      beforeSend: function (r) {},
+      success: function (result) {
+        $("#showArea").val(result);
+      },
+      error(r) {
+        alert("Error");
+      },
+    });
   });
 
-  //area rect
   $(document).on("click", ".areaRect", function () {
-    var resul = ($("#altRec").val() * $("#baseRec").val());
-    $("#showAreaRect").val(resul);
+    $.ajax({
+      type: "POST",
+      url: "/areaRect",
+      data: { baseRect: $("#baseRec").val(), alturaRect: $("#altRec").val() },
+      beforeSend: function (r) {},
+      success: function (result) {
+        $("#showAreaRect").val(result);
+      },
+      error(r) {
+        alert("Error");
+      },
+    });
   });
 
-  //peri rect
   $(document).on("click", ".periRect", function () {
-    if($("#altRec").val() == "" || $("#baseRec").val() == ""){
-      alert("Rellene ambos campos")
-    }else{
-      var resul = ( (2*$("#altRec").val()) + (2*$("#baseRec").val())  );
-      $("#showPeriRect").val(resul);
+    if ($("#altRec").val() == "" || $("#baseRec").val() == "") {
+      alert("Rellene ambos campos");
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/periRect",
+        data: { baseRect: $("#baseRec").val(), alturaRect: $("#altRec").val() },
+        beforeSend: function (r) {},
+        success: function (result) {
+          $("#showPeriRect").val(result);
+        },
+        error(r) {
+          alert("Error");
+        },
+      });
     }
- 
   });
-
-
 });
-
-const trianguloArea = (a, b) => {
-  return (a * b) / 2;
-};
-
-const trianguloPerimetro = (a, b, c) => {
-  return parseFloat(a) + parseFloat(b) + parseFloat(c);
-};
-
-const circuloArea = (r) => {
-  return Math.PI * Math.pow(r, 2);
-};
-
-const perimetroCir = (r) => {
-  return 2 * Math.PI * r;
-};
