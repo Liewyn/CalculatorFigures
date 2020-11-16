@@ -19,7 +19,7 @@ public class IndexController {
     @PostMapping("/areaTriangulo")
     @ResponseBody
     public Float areaTriangulo(@RequestParam("base") Float base, @RequestParam("altura") Float altura) {
-        System.out.println("Tipo peticion area triangulo  con: base=" + base  + "altura=" +altura);
+        //System.out.println("Tipo peticion area triangulo  con: base=" + base  + "altura=" +altura);
         return (base * altura) / 2 ;
     }
 
@@ -28,7 +28,7 @@ public class IndexController {
     public Float periTriangulo(@RequestParam("ladoa") Float ladoa, @RequestParam("ladob") Float ladob,
             @RequestParam("ladoc") Float ladoc) {
         Float resultadoperi = ladoa + ladob + ladoc;
-        System.out.println("Tipo peticion perimetro triangulo  con: ladoa=" + ladoa  + "ladob=" +ladob + "ladoc" + ladoc);
+        //System.out.println("Tipo peticion perimetro triangulo  con: ladoa=" + ladoa  + "ladob=" +ladob + "ladoc" + ladoc);
         return resultadoperi;
     }
 
@@ -36,7 +36,7 @@ public class IndexController {
     @ResponseBody
     public Float areaCirculo(@RequestParam("radio") Float r) {
         Double resultadoareac = Math.PI * Math.pow(r, 2);
-        System.out.println("Tipo peticion area circulo con radio=" + r);
+        //System.out.println("Tipo peticion area circulo con radio=" + r);
         return resultadoareac.floatValue();
     }
 
@@ -44,7 +44,7 @@ public class IndexController {
     @ResponseBody
     public Float periCirculo(@RequestParam("radio") Float r) {
         Double resultadopericir = 2 * Math.PI * r;
-        System.out.println("Tipo peticion perimetro circulo con radio=" + r);
+        //System.out.println("Tipo peticion perimetro circulo con radio=" + r);
         return resultadopericir.floatValue();
     }
 
@@ -52,7 +52,7 @@ public class IndexController {
     @ResponseBody
     public Float areaRect(@RequestParam("baseRect") Float baseRect, @RequestParam("alturaRect") Float alturaRect) {
         Float resultadoRectArea = baseRect * alturaRect;
-        System.out.println("Tipo peticion area rect con altura=" + alturaRect + "baserec=" + baseRect);
+        //System.out.println("Tipo peticion area rect con altura=" + alturaRect + "baserec=" + baseRect);
         return resultadoRectArea;
     }
 
@@ -60,7 +60,7 @@ public class IndexController {
     @ResponseBody
     public Float periRect(@RequestParam("baseRect") Float baseRect, @RequestParam("alturaRect") Float alturaRect) {
         Float resultadoRectPeri = (2 * baseRect) + (2* alturaRect) ;
-        System.out.println("Tipo peticion perimetro rect con altura=" + alturaRect + "baserec=" + baseRect);
+        //System.out.println("Tipo peticion perimetro rect con altura=" + alturaRect + "baserec=" + baseRect);
         return resultadoRectPeri;
     }
 
